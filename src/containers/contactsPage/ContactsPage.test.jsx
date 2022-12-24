@@ -4,7 +4,9 @@ import { ContactsPage } from './ContactsPage';
 describe("ContactsPage component", () => {
     it("rendered", () => {
         render(<ContactsPage />);
-        const element = screen.getByRole("headng")
-        expect(element).toBeIntheDocument();
+        const element = screen.getByRole('heading', {
+            name: /add contact/i
+          })
+        expect(element).toBeInTheDocument();
     })
 })
