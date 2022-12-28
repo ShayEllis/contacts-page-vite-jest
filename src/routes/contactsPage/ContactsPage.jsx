@@ -20,7 +20,7 @@ export const ContactsPage = () => {
       } else {
         setIsDuplicate(false);
       }
-    }
+     }
   },[name]);
 
   const handleChange = ({ currentTarget, target }) => {
@@ -61,7 +61,7 @@ export const ContactsPage = () => {
       <hr />
       <section>
         <h2>Contacts</h2>
-        <TileList />
+        <TileList contacts={contacts} />
       </section>
     </div>
   );
