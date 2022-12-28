@@ -2,12 +2,29 @@ import React, { useEffect, useState } from 'react';
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 
 export default function Root() {
-    const [contacts, setContacts] = useState([]); //An array of objects
+    const [contacts, setContacts] = useState([
+        {
+            name: 'shay',
+            phone: '503-384-8355',
+            email: 'shay.ellis815@gmail.com'
+        },
+        {
+            name: 'sarah',
+            phone: '503-484-7637',
+            email: 'sellis815@outlook.com'
+        },
+        {
+            name: 'bella',
+            phone: '503-222-8345',
+            email: 'bella@gmail.com'
+        }
+    ]); //An array of objects
+
     const addContact = (name, phone, email) => {
         const newContact = {
-            name: name,
-            phone: phone,
-            email: email
+            name,
+            phone,
+            email
         };
         setContacts(pre => [newContact, ...pre]);
     }
@@ -15,10 +32,10 @@ export default function Root() {
     const [appointments, setAppointments] = useState([]); //An array of objects
     const addAppointment = (title, contact, date, time) => {
         const newAppointment = {
-            title: title,
-            contact: contact,
-            date: date,
-            time: time
+            title,
+            contact,
+            date,
+            time
         }
         setAppointments(pre => [newAppointment, ...pre]);
     }
@@ -44,10 +61,10 @@ export default function Root() {
     return (
         <>
             <nav>
-                <NavLink to="contacts" className={(isActive) => isActive ? "active" : ""}>
+                <NavLink to="contacts" className={({ isActive }) => isActive ? "active" : ""}>
                 Contacts
                 </NavLink>
-                <NavLink to="appointments" className={(isActive) => isActive ? "active" : ""}>
+                <NavLink to="appointments" className={({ isActive }) => isActive ? "active" : ""}>
                 Appointments
                 </NavLink>
             </nav>

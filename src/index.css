@@ -67,6 +67,17 @@ select {
   box-sizing: border-box;
 }
 
+input.duplicate {
+  border-color: red;
+  color: red;
+}
+
+form h3 {
+  font-size: 1rem;
+  color: red;
+  text-align: center;
+}
+
 .tile {
   margin: 0;
   font-size: 14px;
