@@ -4,7 +4,7 @@ import { ContactForm } from '../../components/contactForm/ContactForm';
 import { TileList } from '../../components/tileList/TileList';
 
 export const ContactsPage = () => {
-  const { contactsPageProps: { contacts, addContact } } = useOutletContext(); // prop passed by outlet context
+  const { contactsProps: { contacts, addContact } } = useOutletContext(); // prop passed by outlet context
 
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -61,7 +61,7 @@ export const ContactsPage = () => {
       <hr />
       <section>
         <h2>Contacts</h2>
-        <TileList contacts={contacts} />
+        <TileList objArr={contacts} />
       </section>
     </div>
   );

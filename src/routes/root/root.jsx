@@ -29,7 +29,26 @@ export default function Root() {
         setContacts(pre => [newContact, ...pre]);
     }
 
-    const [appointments, setAppointments] = useState([]); //An array of objects
+    const [appointments, setAppointments] = useState([
+        {
+            title: "appointment 1",
+            contact: 'dusty',
+            date: 'date 1',
+            time: 'time 1'
+        },        
+        {
+            title: "appointment 2",
+            contact: 'jeff',
+            date: 'date 2',
+            time: 'time 2'
+        },        
+        {
+            title: "appointment 3",
+            contact: 'bill',
+            date: 'date 3',
+            time: 'time 3'
+        }
+    ]); //An array of objects
     const addAppointment = (title, contact, date, time) => {
         const newAppointment = {
             title,
@@ -41,11 +60,11 @@ export default function Root() {
     }
 
     const pageProps = {
-        contactsPageProps: {
+        contactsProps: {
             addContact,
             contacts
         },
-        appointmentsPageProps: {
+        appointmentsProps: {
             addAppointment,
             appointments
         }
