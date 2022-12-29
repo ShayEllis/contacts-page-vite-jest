@@ -13,6 +13,9 @@ export const ContactsPage = () => {
 
   useEffect(() => {
     let nameState = name.toUpperCase().trim();
+    if (!contacts) {
+      return
+    }
     for (let contact of contacts) {
       if (contact.name.toUpperCase().trim() === nameState) {
         setIsDuplicate(true);

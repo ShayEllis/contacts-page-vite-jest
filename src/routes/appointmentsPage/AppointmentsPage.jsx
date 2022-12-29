@@ -15,7 +15,7 @@ export const AppointmentsPage = () => {
     if (currentTarget.name === 'title') {
       setTitle(target.value);
     }
-    if (currentTarget.name === 'contact') {
+    if (currentTarget.name === 'contacts') {
       setContaact(target.value);
     }
     if (currentTarget.name === 'date') {
@@ -39,7 +39,7 @@ export const AppointmentsPage = () => {
     <div>
       <section>
         <h2>Add Appointment</h2>
-        <AppointmentForm title={title} contact={contact} date={date} time={time} handleChange={handleChange} handleSubmit={handleSubmit} />
+        <AppointmentForm title={title} contacts={contacts} contact={contact} date={date} time={time} handleChange={handleChange} handleSubmit={handleSubmit} />
       </section>
       <hr />
       <section>
